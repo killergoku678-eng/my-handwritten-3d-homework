@@ -8,35 +8,57 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Warm paper-like backgrounds */
+    --background: 35 25% 97%;
+    --foreground: 25 40% 15%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    /* Card with subtle paper texture feel */
+    --card: 40 30% 98%;
+    --card-foreground: 25 40% 15%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 40 30% 98%;
+    --popover-foreground: 25 40% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Educational teal/blue primary */
+    --primary: 195 85% 45%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Soft secondary for accents */
+    --secondary: 35 40% 90%;
+    --secondary-foreground: 25 40% 20%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Muted for subtle elements */
+    --muted: 35 30% 92%;
+    --muted-foreground: 25 20% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Accent with warm orange/amber */
+    --accent: 25 85% 60%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 35 20% 85%;
+    --input: 35 20% 92%;
+    --ring: 195 85% 45%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
+    
+    /* Custom educational tokens */
+    --paper: 40 30% 98%;
+    --ink: 195 85% 35%;
+    --pencil: 25 40% 25%;
+    --highlight: 45 100% 65%;
+    
+    /* Shadows */
+    --shadow-soft: 0 2px 8px -2px hsl(25 40% 15% / 0.08);
+    --shadow-card: 0 4px 16px -4px hsl(25 40% 15% / 0.12);
+    --shadow-float: 0 8px 24px -6px hsl(195 85% 45% / 0.15);
+    
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --radius: 0.75rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -56,33 +78,42 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 25 15% 10%;
+    --foreground: 35 20% 95%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 25 18% 12%;
+    --card-foreground: 35 20% 95%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 25 18% 12%;
+    --popover-foreground: 35 20% 95%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 195 75% 55%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 25 20% 18%;
+    --secondary-foreground: 35 20% 95%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 25 18% 16%;
+    --muted-foreground: 35 15% 60%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 25 80% 55%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 72% 55%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --border: 25 15% 20%;
+    --input: 25 15% 18%;
+    --ring: 195 75% 55%;
+    
+    --paper: 25 18% 14%;
+    --ink: 195 75% 60%;
+    --pencil: 35 25% 85%;
+    --highlight: 45 90% 55%;
+    
+    --shadow-soft: 0 2px 8px -2px hsl(0 0% 0% / 0.3);
+    --shadow-card: 0 4px 16px -4px hsl(0 0% 0% / 0.4);
+    --shadow-float: 0 8px 24px -6px hsl(195 85% 45% / 0.3);
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -100,6 +131,32 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-handwriting;
+  }
+}
+
+@layer utilities {
+  .text-handwriting {
+    font-family: 'Caveat', cursive;
+  }
+  
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+  
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+  
+  .shadow-float {
+    box-shadow: var(--shadow-float);
+  }
+  
+  .transition-smooth {
+    transition: var(--transition-smooth);
   }
 }
